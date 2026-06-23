@@ -11,7 +11,7 @@ jobs:
       - name: "login"
         uses: azure/login@v2
         with:
-          cred: ${{secrets.AZURE_CREDENTIAL}}
+          creds: ${{secrets.AZURE_CREDENTIAL}}
       - name: "checkout"
         uses: actions/checkout@v6
       - name: "submit job(deploy)"
