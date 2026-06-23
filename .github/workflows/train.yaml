@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   deployment:
-    runs-on: ubuntu:latest
+    runs-on: [self-hosted,dev-runner]
     environment: dev
     steps:
       - name: "login"
