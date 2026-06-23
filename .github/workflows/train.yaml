@@ -3,6 +3,8 @@ on:
   push:
     branches-ignore:
       - main
+  workflow_dispatch:
+  
 jobs:
   deployment:
     runs-on: self-hosted
