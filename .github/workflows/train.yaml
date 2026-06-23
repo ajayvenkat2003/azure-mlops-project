@@ -9,7 +9,7 @@ jobs:
     environment: dev
     steps:
       - name: "login"
-        uses: azure/login@v2
+        uses: azure/login@v3.0.0
         with:
           creds: ${{secrets.AZURE_CREDENTIAL}}
       - name: "checkout"
