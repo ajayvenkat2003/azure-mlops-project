@@ -4,8 +4,10 @@ from azure.ai.ml import MLClient,command,Input
 from azure.ai.ml.entities  import Data
 from azure.identity import DefaultAzureCredential
 import yaml
+import datetime
 
 ENV = "DEV"
+JOB_NAME = f"train-job-{datetime.datetime.now().strftime("%Y-%m-%d:%H-%M")}"
 credential = DefaultAzureCredential()
 with open('./configs/infra.yaml',"r+") as file:
     configs = yaml.safe_load(file)
@@ -15,8 +17,8 @@ RESOURCE_GROUP_NAME= configs[ENV]["RESOURCE_GROUP_NAME"]
 ml_client = MLClient(credential,resource_group_name=RESOURCE_GROUP_NAME,subscription_id=SUBSCRIPTION_ID,workspace_name=WORKSPACE_NAME)
 data_input = Input(path="azureml:train-data:1")
 train_job =  command(
-name="train-job6",
-display_name="training",
+name=JOB_NAME,
+display_name=JOB_NAME,
 experiment_name="training_exp",
 inputs={"data_asset":data_input },
 code="./",
