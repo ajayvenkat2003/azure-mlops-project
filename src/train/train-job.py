@@ -7,7 +7,7 @@ import yaml
 import datetime
 
 ENV = "DEV"
-JOB_NAME = f"train-job-{datetime.datetime.now().strftime("%Y-%m-%d:%H-%M")}"
+JOB_NAME = f"train-job-{datetime.datetime.now().strftime('%Y-%m-%d:%H-%M')}"
 credential = DefaultAzureCredential()
 with open('./configs/infra.yaml',"r+") as file:
     configs = yaml.safe_load(file)
