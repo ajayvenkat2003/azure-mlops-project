@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   deployment:
-    runs-on: [self-hosted,dev-runner]
+    runs-on: self-hosted
     environment: dev
     steps:
       - name: "login"
