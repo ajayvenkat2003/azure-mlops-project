@@ -1,0 +1,12 @@
+DEV:
+  SUBSCRIPTION_ID: "17d9af06-ef0a-4411-878f-2198e61bfd65"
+  RESOURCE_GROUP_NAME: "dev-env-group"
+  WORKSPACE_NAME: "dev-env-workspace"
+TEST:
+  SUBSCRIPTION_ID: "17d9af06-ef0a-4411-878f-2198e61bfd65"
+  RESOURCE_GROUP_NAME: "test-env-group"
+  WORKSPACE_NAME: "test-env-workspace"
+PROD:
+  SUBSCRIPTION_ID: "17d9af06-ef0a-4411-878f-2198e61bfd65"
+  RESOURCE_GROUP_NAME: "prod-env-group"
+  WORKSPACE_NAME: "prod-env-workspace"
