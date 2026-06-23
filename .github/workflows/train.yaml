@@ -1,0 +1,25 @@
+name: "train-workflow"
+on:
+  push:
+    branches-ignore:
+      - main
+jobs:
+  deployment:
+    runs-on: ubuntu:latest
+    environment: dev
+    steps:
+      - name: "login"
+        uses: azure/login@v2
+        with:
+          cred: ${{secrets.AZURE_CREDENTIAL}}
+      - name: "checkout"
+        uses: actions/checkout@v6
+      - name: "submit job(deploy)"
+        run: |
+          apt-get update 
+          pip install uv
+          uv sync
+          uv run src/train/train-job.py
+      - run: echo "job deployed"
+
+      

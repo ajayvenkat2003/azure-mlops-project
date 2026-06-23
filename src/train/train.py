@@ -23,7 +23,7 @@ class TrainModel:
             mlflow.sklearn.log_model(self.model,artifact_path="logistic_model")
             model = mlflow.register_model(f"runs:/{run.info.run_id}/logistic_model",name="logistic_model")
         client = mlflow.MlflowClient()
-        client.set_registered_model_alias(model.name,"latest",model.version)
+        client.set_registered_model_alias(model.name,"current",model.version)
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--file",default="path to file")
