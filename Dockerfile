@@ -1,4 +1,6 @@
 FROM python:3.11-slim
-COPY ./requirements.txt .
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+COPY . .
+RUN pip install uv
+RUN uv sync
+CMD uv run ./src/train/train-job.py
+
