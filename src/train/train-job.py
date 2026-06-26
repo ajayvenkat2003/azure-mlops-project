@@ -24,6 +24,6 @@ inputs={"data_asset":data_input },
 code="./",
 command = "python src/train/train.py --file ${{inputs.data_asset}}",
 environment="my-env:6",
-compute="aml-compute"
+compute="aml-customcompute"
 )
 ml_client.jobs.create_or_update(train_job)
